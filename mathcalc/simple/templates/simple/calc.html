@@ -1,11 +1,15 @@
-<html>
+<html> 
 <head>
     <title>Putrefaction</title>
 </head>
-<body>
-    <form action="/simple/" method="get">
-        <input type="number" name='q'required placeholder='Type your number there'>
-        <input type="submit" value="Expanding">
+<body> 
+    <form method="get">
+        <input type="number" name='number' required placeholder='Type your number there'>
+        <input type="submit" value="Decompose">
     </form>
+    {% if answer %}
+    Prime factorization:<br>
+    {{answer}} {{message}}
+    {% endif %}
 </body>
 </html>
