@@ -4,9 +4,10 @@ from django.shortcuts import render
 def primfacs(number):
     """Decomposes a number into prime factors.
 
-    number -- integer.
+    number -- positive integer.
     Returns a list of prime factors.
     Between which there is a multiplication sign, as a list item.
+    Unobvious moment may be len(primfac) recognizes multiplication sign.
 
     """
     min_prime_factor = 2  # Minimal prime factor
@@ -22,7 +23,7 @@ def primfacs(number):
             # Assign next branch for factorization cycle.
             number = int(number / min_prime_factor)
         # Try next factor
-        min_prime_factor = min_prime_factor + 1
+        min_prime_factor += 1
     # After cycles n must be prime factor.
     if number > 1:
         primfac.append(number)
@@ -43,11 +44,11 @@ def calc(request):
     if "number" in request.GET:
         message = request.GET["number"]
         int_message = int(message)
-        # For work definition primfacs(number) if number is negative.
         if int_message < 0:
-            int_message *= -1
+            # For work def primfacs(number) if number is negative.
             # Calculates prime factors. Convert list to string.
             # And save negative sign for negative number.
+            int_message *= -1
             list_of_primes = primfacs(int_message)
             converted = map(str, list_of_primes)
             answer = "-" + "".join(converted)
@@ -59,7 +60,7 @@ def calc(request):
         # For avoid explicit answer like 2=2, will return only number.
         if len(list_of_primes) < 3:
             message = ""
-        # Adds to prime factors equal sign.
+        # Adds to prime factors equal sign and inputted number.
         else:
             message = "= " + message
         context = {"answer": answer, "message": message}
