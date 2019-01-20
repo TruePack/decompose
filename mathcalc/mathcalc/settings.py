@@ -36,7 +36,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]  # The application will be available at the localhost
+# The application will be available at the localhost
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]
 
 
 # Application definition
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'simple',  # An application for factorizing a number into prime factors
+    # An application for factorizing a number into prime factors
+    'simple',
 ]
 
 MIDDLEWARE = [

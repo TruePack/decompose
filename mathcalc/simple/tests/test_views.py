@@ -49,7 +49,7 @@ class CalcTestCase(TestCase):
 
     def test_server_is_aviable(self):
         """Server answer status code must be 200 (Ok)."""
-        http_response = self.client.get('/')
+        http_response = self.client.get("/")
         self.assertEqual(http_response.status_code, 200)
 
     def test_prime_factors(self):
@@ -62,13 +62,13 @@ class CalcTestCase(TestCase):
         """
         # Make GET request, with parameter "number".
         # Take context from template, like it in template.
-        five = self.client.get('/', {"number": 5}).context
-        result_five = five['answer'] + five['message']
-        twenty_five = self.client.get('/', {"number": 25}).context
-        result_twenty_five = twenty_five['answer'] + twenty_five['message']
-        forty_four = self.client.get('/', {"number": 44}).context
-        result_forty_four = forty_four['answer'] + forty_four['message']
+        five = self.client.get("/", {"number": 5}).context
+        result_five = five["answer"] + five["message"]
+        twenty_five = self.client.get("/", {"number": 25}).context
+        result_twenty_five = twenty_five["answer"] + twenty_five["message"]
+        forty_four = self.client.get("/", {"number": 44}).context
+        result_forty_four = forty_four["answer"] + forty_four["message"]
         # Checking to follow rules.
-        self.assertEqual(result_five, '5')
-        self.assertEqual(result_twenty_five, '5*5 = 25')
-        self.assertEqual(result_forty_four, '2*2*11 = 44')
+        self.assertEqual(result_five, "5")
+        self.assertEqual(result_twenty_five, "5*5 = 25")
+        self.assertEqual(result_forty_four, "2*2*11 = 44")
