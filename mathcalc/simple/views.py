@@ -62,7 +62,7 @@ def calc(request):
             message = ""
         # Adds to prime factors equal sign and inputted number.
         else:
-            message = "= " + message
+            message = " = " + message
         context = {"answer": answer, "message": message}
         return render(request, "simple/calc.html", context)
     else:
