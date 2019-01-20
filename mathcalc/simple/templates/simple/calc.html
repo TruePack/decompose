@@ -2,7 +2,10 @@
 <head>
     <title>Putrefaction</title>
 </head>
-<body> 
+<body>
+    {% if error %}
+    {{error|linebreaks }}
+    {% endif %}
     <form method="get">
         <input type="number" name='number' required placeholder='Type your number there'>
         <input type="submit" value="Decompose">

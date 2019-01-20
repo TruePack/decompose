@@ -67,3 +67,16 @@ def calc(request):
         return render(request, "simple/calc.html", context)
     else:
         return render(None, "simple/calc.html")
+
+
+def e_handler500(request):
+    """Custom 500 server-error.
+
+    If something went wrong, will show base template with error message.
+
+    """
+    error = "Oops, something went wrong. \n" \
+            "Make sure you enter an integer and try again."
+    context = {"error": error}
+    return render(None, "simple/calc.html", context)
+

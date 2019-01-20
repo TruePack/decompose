@@ -19,3 +19,4 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('simple.urls')),
 ]
+handler500 = "simple.views.e_handler500"
