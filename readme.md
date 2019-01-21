@@ -1,4 +1,4 @@
-# Project Title 
+# Decompose
 
 Web Application, decomposes the number into prime factors. 
 
@@ -7,19 +7,28 @@ Web Application, decomposes the number into prime factors.
 
 ### Prerequisites 
 
-For install web-app in containerization environment you need 
-[Docker](https://www.docker.com/).
+For install web-app in containerization environment you need installed
+[Docker](https://www.docker.com/) and [Git](https://git-scm.com/).
 
 ### Installing 
+
+#### Clone repository
+
+```
+git clone https://github.com/TruePack/decompose
+cd decompose/mathcalc
+```
+Clone repository and change directory with Dockerfile.
+
 #### Build container
-First you need to collect the docker-container with the help
+First you need to obtain the docker-container with the help of
 Dockerfile. 
 You can get this by executing the command from the directory with the
  Dockerfile.
 ```
 docker build -t mathcalc .
 ``` 
-#####Details: 
+**Details:** 
 ```
 docker build
 ```
@@ -43,7 +52,7 @@ Then you need start your built image.
 docker run --rm -it -p 8000:8000 mathcalc 
 ``` 
 
-#####Details:
+**Details:**
 
 ```
 docker run
@@ -59,7 +68,7 @@ Automatically remove the container when it exits.
 
 
 ```
--t, --tty
+-t
 ```
 Allocate a pseudo-terminal.
 
@@ -77,7 +86,7 @@ Name of image which running.
 
 #### Finally
 
-And if everything ok, you will see the message in terminal:
+And if everything is ok, you will see the message in terminal:
 ```
 Performing system checks...
 
@@ -89,8 +98,8 @@ Quit the server with CONTROL-C.
 
 ```
 
-Now you can visit app on you local machine with browser on 
-localhost:8000 (127.0.0.0:8000).
+Now you can visit app on your local machine with browser on 
+localhost:8000 (127.0.0.1:8000).
 
 
 ## Built With 
