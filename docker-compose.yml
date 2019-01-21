@@ -1,9 +1,0 @@
-version: '2.1'
-services:
-    web:
-        build: ./mathcalc
-        command: python ./manage.py runserver 0.0.0.0:8000
-        ports:
-        - 8000:8000
-        volumes: 
-        - ./mathcalc:/mathcalc
